@@ -9,5 +9,5 @@
 3회 누적시 Disconnect
 
 ### Client
-같은 text 무시
+같은 text 무시  
 일의 자리수의 덧셈 문제 해결시에 text 보내짐 
