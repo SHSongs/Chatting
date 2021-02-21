@@ -47,11 +47,17 @@
             var question;
             var answer;
 
-            if (mode===0){
+            if (mode<=1){//0~1 = 2%
               n1=getRandomInt(10,99);
               n2=getRandomInt(10,99);
               question = `Answer ${n1} * ${n2} = `;
               answer=n1*n2
+            }
+            else if(mode<=8){//2~8 = 7%
+              n1=getRandomInt(10,9999);
+              n2=getRandomInt(1,9);
+              question = `Answer ${n1} // ${n2} = `;
+              answer=parseInt(n1/n2)       
             }
             else{
               n1=getRandomInt(0,10);
