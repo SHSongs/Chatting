@@ -31,6 +31,7 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script>
       cantalk=1
+      var nick_name = prompt('nick name' , '' );
 
       function getRandomInt(min, max) {
         min = Math.ceil(min);
@@ -70,7 +71,7 @@
             if(parseInt(jbResult) === answer){
                         if($('#m').val() != ""&&cantalk==1&&$('#m').length<50){
                         e.preventDefault(); // prevents page reloading
-                        socket.emit('chat message', $('#m').val());
+                        socket.emit('chat message', nick_name + " : " + $('#m').val());
                         $('#m').val('');
                         cantalk=0
                         setTimeout(cantalk=1,3000)
