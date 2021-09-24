@@ -34,14 +34,20 @@ io.on('connection', (socket) => {
   socket.on('chat message', (msg) => {
     console.log(msg);
 
-        
-    if(msg === preStr || msg.length > 50){
-      console.log("폐기")
-      return
+    try{
+    
+      if(msg === preStr || msg.length > 50){
+        console.log("폐기")
+        return;
+      }
+    
+      io.emit('chat message', msg);
+      preStr = msg;
     }
-
-    io.emit('chat message', msg);
-    preStr = msg;
+    catch(err){
+      console.log(err);
+      return;
+    }
   });
 });
 
